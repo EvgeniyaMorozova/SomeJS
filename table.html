@@ -1,0 +1,36 @@
+<html> 
+<head>
+    <meta charset="utf-8"/>
+       
+</head>
+<body>
+
+<table id="table_1" border = 1></table>
+
+</body>
+>
+    
+    
+    
+<script>
+
+var table = document.getElementById('table_1');
+
+for(i=1;i<101;i++)
+{
+var tr = document.createElement('tr');
+
+    for(y=1;y<11;y++)
+   {
+       var inner_td = document.createElement('td');
+       inner_td.innerHTML=y;
+       tr.append(inner_td);
+    }   
+
+table.append(tr);
+
+
+}
+</script>
+
+<html>

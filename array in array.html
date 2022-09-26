@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="black.css"/>
+    </head>
+  <body>
+  <!--
+    <style>
+
+      body
+    {
+        background: rgba(119, 11, 92, 0.589);
+        
+    }
+      ul
+    {
+        color: white;
+    }
+
+    </style>
+  -->
+
+    <div id="some_div"></div>
+    <ul id="list"></ul>      
+      
+    <script>
+
+        var container= document.getElementById("some_div"); 
+        var ul = document.getElementById("list");
+             
+        
+        
+        var some_array = [];
+        
+            
+                    for(i=0; i<10; i++)
+                {
+                    
+                 var inner_array=[];
+
+                           for(x=0;x<10;x++)
+                        {
+                   
+                          var second_inner_array=['['+1,2,3+']'];
+                           inner_array.push(second_inner_array);
+                        }
+
+                some_array.push(inner_array);
+                ul.innerHTML += ('<li>'+'['+some_array[i]+']'+'</li>');
+                
+                }
+               
+               
+        container.append(ul);
+
+                
+    
+
+      console.log(some_array);
+         
+     
+
+    </script>
+  </body>  
+    
+</html>

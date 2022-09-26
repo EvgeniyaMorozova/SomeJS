@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+
+</head>
+<body>
+<div id="press_div"></div>
+<script>
+
+var press_div = document.querySelector("#press_div");
+var some_text="Happy Halloween";
+
+ for(i=0;i<some_text.length;i++)
+  {
+      var new_div = document.createElement('div');
+      var r = Math.floor(Math.random()*256);
+      var g = Math.floor(Math.random()*256);
+      var b = Math.floor(Math.random()*256);
+      new_div.style.color = "rgb("+r+","+g+","+b+")";
+      new_div.innerHTML = some_text[i]; 
+      press_div.append(new_div);
+            
+    }
+/*Покрасить всю надпись при нажатии 
+
+var r = Math.floor(Math.random()*256);
+var g = Math.floor(Math.random()*256);
+var b = Math.floor(Math.random()*256);
+
+var rgb = "rgb("+r+","+g+","+b+")";
+
+var press_div = document.querySelector("#press_div");
+press_div.onclick = colors;
+       
+function colors()
+{    
+press_div.style.color= rgb; 
+}
+*/
+</script>    
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {border: 1px solid black; width: 500px; height: 500px;}
+
+    div{
+        top: 10px;
+        background: red;
+        position: absolute;
+        height: 100px;
+        border-radius: 50%;
+        left: 0px;
+        width: 100px;
+        border: 1px solid red;
+        transition: top 1s ease-out;
+    }
+
+    .fullscreen { top: 400px; transition: top 2s ease-in;}
+</style>
+</head>
+<body>
+    <div></div>
+    <script>
+        div = document.querySelector('div');
+
+       div.onclick = function() {
+            div.classList.toggle("fullscreen");
+            
+            }
+
+div.addEventListener("transitionend", func);
+        
+function func()
+
+{
+            div.classList.toggle("fullscreen");
+                 
+        }     
+
+
+var x=0;
+setInterval( left ,10);
+extra=1;
+function left() {
+    
+    div.style.left=x+"px";
+    if(x==400 || x<0) {   extra*=(-1);   } 
+    x+=extra;
+    
+}
+
+</script>
+</body>
+</html>

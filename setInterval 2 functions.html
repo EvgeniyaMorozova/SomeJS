@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <style>
+         
+ body {
+  background: white;
+}
+div  {
+  height: 30px;
+  width: 0px;
+  background: greenyellow;
+  border: 1px solid indigo;
+}
+        </style>
+    </head>
+ <body>
+
+    <div></div>
+
+<script>
+
+var d= document.querySelector('div');
+
+var my_interval = setInterval( my_func, 1000);
+var new_interval;
+
+var i=0;
+
+function my_func() {
+d.style.width=i+"px";
+d.innerHTML=i+"px";
+i+=50;
+
+if(i==500){clearInterval(my_interval);
+new_interval = setInterval( new_func, 1000);}
+}
+
+    function new_func() {
+    d.style.width=i+"px";
+    d.innerHTML=i+"px";
+    i-=50;
+    if(i==0) {clearInterval(new_interval);
+    my_interval = setInterval( my_func, 1000);}
+    }
+
+/* Ширина Дива увеличивается до 500, 
+после этого возвращается до нуля, потом обратно и так 
+бесконечно*/
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        
+    </head>
+  <body>
+     <div id="some_div"></div>
+     <ul id="list"></ul> 
+      
+      
+    <script>
+     
+        var container= document.getElementById("some_div"); 
+        var ul = document.getElementById("list");
+     
+        var some_array = [ 1,2,5, "10", true, [1,2,3]  ];
+
+        for(x=0; x<some_array.length; x++)
+      
+      {
+        ul.innerHTML += ('<li>'+some_array[x]+'</li>');  
+      }
+      
+      container.append(ul);
+
+      
+
+    </script>
+  </body>  
+    
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+
+</head>
+<body>
+<div id="press_div"></div>
+<script>
+
+var press_div = document.querySelector("#press_div");
+var some_text="Hello World";
+
+ for(i=0;i<some_text.length;i++)
+  {
+    var new_div = document.createElement('div');
+    new_div.innerHTML = some_text[i];
+      
+     
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+        for (y = 0; y < 6; y++) {
+        color += letters[Math.floor(Math.random() * 16)];
+        }
+     
+     new_div.style.color = color;
+     press_div.append(new_div);
+    }
+
+
+
+</script>    
+    
+</body>
+</html>

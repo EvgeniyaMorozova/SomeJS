@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    
+   <style>
+body {
+  border: 1px solid black;
+  width: 500px;
+  height: 500px;
+}
+   </style>
+    
+
+</head>
+
+<canvas id="canvas" width="500" height="500"></canvas>
+<script>
+
+var isDrawing = false;
+var x = 0;
+var y = 0;
+
+var my_canv = document.getElementById('canvas');
+var context = my_canv.getContext('2d');
+
+my_canv.addEventListener('mousedown', start_drawing);
+function start_drawing (e)
+{
+  x = e.offsetX;
+  y = e.offsetY;
+  isDrawing = true;
+}
+
+my_canv.addEventListener('mousemove', _drawing);
+function _drawing (e)
+{//console.log(isDrawing);
+  if (isDrawing === true) {
+    drawLine(context, x, y, e.offsetX, e.offsetY);
+    x = e.offsetX;
+    y = e.offsetY;
+  }
+}
+
+my_canv.addEventListener('mouseup', stop_drawing);
+function stop_drawing(e)
+{
+  if (isDrawing === true) {
+    drawLine(context, x, y, e.offsetX, e.offsetY);
+    x = 0;
+    y = 0;
+    isDrawing = false;
+  }
+}
+
+function drawLine(context, x1, y1, x2, y2) {
+  context.beginPath(); // начинает новый путь
+  context.moveTo(x1, y1); // передвигает в точку
+  context.lineTo(x2, y2); // рисует линию до точки
+  context.stroke(); // отображает путь
+  context.closePath(); // закрывает путь
+}
+
+</script>
+
+
+</html>

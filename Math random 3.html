@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+
+</head>
+<body>
+<div id="press_div"></div>
+<script>
+
+var press_div = document.querySelector("#press_div");
+var some_text="Happy Halloween";
+
+
+
+
+ function random_color(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+
+ for(i=0;i<some_text.length;i++)
+  {
+      var new_div = document.createElement('div');
+      new_div.innerHTML = some_text[i];
+      press_div.append(new_div);
+      new_div.style.color = `rgb(${random_color(0, 255)}, ${random_color(0, 255)}, ${random_color(0, 255)})`;
+      
+    }
+
+
+
+</script>    
+    
+</body>
+</html>

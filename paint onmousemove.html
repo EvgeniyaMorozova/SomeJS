@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+body{width: 500px;height: 500px;border: 1px solid black;}
+div {position: absolute; width: 10px; height: 10px; background: black;}
+    </style>
+</head>
+<body>
+<!-- <span></span>
+     <div></div>   --> 
+    <script>
+       document.body.onmousemove = function(event)
+       {
+          //document.querySelector('span').innerHTML = event.clientY;
+          console.log(event);
+          var new_div = document.createElement('div');
+          //new_div.innerHTML = event.clientX +","+ event.clientY;
+          new_div.style.left = event.clientX +"px";
+          new_div.style.top = event.clientY +"px";
+          document.body.append(new_div);
+        }
+    </script>
+</body>
+</html>

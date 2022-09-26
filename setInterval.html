@@ -1,0 +1,38 @@
+<html>
+<style>
+body {
+  background: white;
+}
+div  {
+  height: 30px;
+  width: 0px;
+  background: greenyellow;
+  border: 1px solid indigo;
+}
+</style>
+
+<div></div>
+
+<script>
+
+var my_interval = setInterval(move, 1000);
+var d = document.querySelector('div');
+i = 0;
+
+function move() { 
+    d.innerHTML = i+"px";
+    d.style.width = i+"px";
+    i+=50;
+
+    if (i==550)
+    {clearInterval(my_interval);}
+  }
+    
+
+
+
+
+</script>
+
+
+</html>

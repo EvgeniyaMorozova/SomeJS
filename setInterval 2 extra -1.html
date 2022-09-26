@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<style>
+body {
+    background: white;
+}
+div  {
+    height: 30px;
+    width: 0px;
+    background: greenyellow;
+    border: 1px solid indigo;
+}
+</style>
+        
+<div></div>
+
+<script>
+var  i=0;  
+var interval_right;
+var d= document.querySelector('div');
+interval_right = setInterval( my_func_right, 500);		
+
+var x=10;
+var extra=10;
+function my_func_right()
+{
+d.style.width = x+"px";
+d.innerHTML=x;
+x+=extra;
+if(x==100 || x==0) { extra*=(-1);}
+}
+/* Ширина Дива увеличивается до 500, 
+после этого возвращается до нуля, потом обратно и так 
+бесконечно
+*/
+</script>
+</body>
+</html>
+

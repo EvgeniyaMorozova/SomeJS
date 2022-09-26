@@ -1,0 +1,83 @@
+<html>
+    <!--  добавить кнопку для удаления нарисованных элементов -->
+    <head><style>
+        body { width:500px;height:500px; border:1px solid black;}
+        div { position: absolute; width:5px; height:5px; background:red; }
+        </style>
+    </head>
+    <body>
+        <input id="size" type="text" placeholder="size"/>
+        <input id="color" type="text" placeholder="color"/>
+        <input onclick="config();" type="button" value="ok"/>
+        <input onclick="clear_all();" type="button" value="delete"/>
+        
+        <!--<span></span>
+        <div></div>-->
+        <script>
+          
+        var size;
+        var color;
+           document.body.onmousedown = function() {               switch_on();           }
+           
+           document.body.onmouseup =  function() {               switch_off();        }
+            
+           function clear_all()
+      {       
+        var picture = document.querySelectorAll('.painted');
+        for (i = 0; i < picture.length; i++) {picture[i].remove();}
+       }      
+     
+    
+           function config()
+      { console.log('config');
+        size  = document.querySelector("#size").value;
+        color = document.querySelector("#color").value;
+        console.log(size);
+        console.log(color);
+       }
+          
+
+
+    function switch_on() 
+{
+     document.body.onmousemove = function( e ) 
+          
+           {
+             //  console.log(e);
+               var x = e.clientX;
+               var y = e.clientY;
+               point(x,y);
+             
+           }
+}
+  
+  function point(x,y)
+  {
+      var new_div= document.createElement("div");
+               new_div.style.background= color;
+               new_div.style.width = size+"px";
+               new_div.style.height = size+"px";
+               new_div.style.left = x + "px";
+               new_div.style.top = y + "px";
+               new_div.className='painted';
+               document.body.append(new_div);
+  }
+  
+    
+    function switch_off()
+{
+      document.body.onmousemove= 0;
+}
+          
+
+        </script>
+      <!--  Задача - чтоб рисование происходило только при зажатой левой кнопки мыши 
+      1) отслежить нажатие на левую кнопку
+            запуск    
+      2) отпускание
+            прекращение
+      -->
+      
+      
+    </body>
+</html>
